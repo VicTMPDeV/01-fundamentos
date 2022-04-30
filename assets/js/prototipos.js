@@ -1,4 +1,6 @@
 /*
+Basado en el tutorial: https://youtu.be/nS5FmAx4u_0
+
 JavaScript es un lenguaje debilmente tipado e interpretado línea a línea
 Orientado a objetos, pero basado en Prototipos, en lugar de en Clases (como por ejemplo Java).
 

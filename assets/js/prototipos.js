@@ -33,7 +33,7 @@ const person1 = {
     weight: 97.3,
     isAlive: true,
     imc: function(){ //Función clásica (antes ES6)
-        return (this.weight / Math.pow(this.height, 2)).toFixed(2);
+        return (this.weight / Math.pow(this.height, 2)).toFixed(2); //NUNCA PONER person1.weight o person1.height
     },
     saludar: function () { 
         console.log(`Hola, me llamo ${this.name} ${this.surname}`);
@@ -93,6 +93,7 @@ const person3 = new Person(3,'John','Doe Foo',1.80,75,false);
 console.log(person3);
 console.log(person3.imc());
 console.log(person3.saludar());
+//El undefined lo pone la consola porque la función no tiene la instrucción return explícita.
 
 
 

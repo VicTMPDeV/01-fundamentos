@@ -60,6 +60,11 @@ class Person {
         Person._counter++;
     }
 
+    //JS NO PERMITE SOBRECARGA DE CONSTRUCTORES, PERO SE PODRÍA CONSEGUIR CON DESESTRUCTURACIÓN DE OBJETOS COMO SIGUE...
+    static constructorByLiteralObject({name, height, weight}){
+        return new Person(name, height, weight);
+    }
+
     //Getters
     get getName(){
         return this.name;
@@ -102,8 +107,22 @@ const pUnd = new Person(); //Si no pasaramos argumentos Y LOS ATRIBUTOS NO TIENE
 const p2 = new Person('Víctor', 1.84, 97);
 
 console.log(pUnd.saludar());
-
 console.log(p2);
+
+const hulio = { //LOS PARAMETROS DEL CONSTRUCTOR PUEDEN VENIR DE UN OBJETO LITERAL (LLAMADA A UNA API POR EJEMPLO)
+    name: 'Hulio',
+    height: 1.95,
+    weight: 87
+}
+
+const pPro1 = new Person(hulio.name, hulio.height, hulio.weight);//O USANDO EL CONSTRUCTOR NORMAL
+console.log('CON EL CONSTRUCTOR NORMAL',pPro1);
+
+const pPro2 = Person.constructorByLiteralObject(hulio); //CON EL CONSTRUCTOR "SOBRECARGADO"
+console.log('OPCION DE "SOBRECARGA" DE CONSTRUCTOR', pPro2);
+
+
+
 console.log('Método con argumentos', p2.imc(this.weight, this.height));
 console.log('Método sin argumentos', p2.imc());
 console.log(p2.saludar());

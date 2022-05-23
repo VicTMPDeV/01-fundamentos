@@ -15,6 +15,8 @@ let ana  = {...juan}; //...operador Spread , ana es un Clon de juan, pero no es 
 ana.nombre = 'Ana';
 console.table({juan, ana});
 
+// MORE INFO -> https://medium.com/laboratoria-developers/por-valor-vs-por-referencia-en-javascript-de3daf53a8b9
+
 //CON ARRAYS
 // const frutas = ['Manzana', 'Pera', 'Piña'];
 // const otrasFrutas = [...frutas, 'Mango'];
